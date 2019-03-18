@@ -1,0 +1,175 @@
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+}
+
+body {
+
+}
+
+:root {
+    --colNum: 7;
+    --rowNum: 6;
+}
+
+#reset {
+    display: inherit;
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100px;
+    height: 20px;
+    width: 70px;
+    background: #b789dd;
+    z-index: 5;
+    border-radius: 25px;
+}
+
+#start {
+    display: inherit;
+    position: absolute;
+    text-align: center;
+    padding-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+    height: 500px;
+    width: 75%;
+    background: #b789dd;
+    z-index: 5;
+    border-radius: 25px;
+}
+
+.redgreen {
+    display: inline-block;
+    margin: 20px;
+    height: 70px;
+    width: 100px;
+    border-radius: 25px;
+}
+
+#red {
+    background: red;
+}
+
+#yellow {
+    background: yellow;
+}
+
+.option {
+    display: inline-block;
+    margin: 20px;
+    height: 70px;
+    width: 100px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    font-size: 30px;
+}
+
+#pc {
+    display: inline-block;
+    margin: 20px;
+    height: 70px;
+    width: 100px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    font-size: 30px;
+}
+
+#arrows {
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    grid-template: 50px / repeat(var(--colNum), 101px)
+}
+
+.board-outer{
+    position: relative;
+    top: 150px;
+    width: 100%;
+}
+
+#board {
+    top: 50px;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    display: grid;
+    grid-template: repeat(var(--rowNum), 101px) / repeat(var(--colNum), 101px)
+
+}
+
+.winner{
+    display: inherit;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+    height: 300px;
+    width: 75%;
+    background: transparent;
+    z-index: 5;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: 1px solid white;
+}
+
+.slot.one {
+    background: red;
+}
+
+.slot.two {
+    background: yellow;
+}
+
+.slot.win {
+    background: green;
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+
+}
+
+.arrow-down.selectedOne {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid red;
+}
+
+.arrow-down.selectedTwo {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid yellow;
+}
